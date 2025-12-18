@@ -1,10 +1,12 @@
 const express = require('express');
 const cors = require('cors');
-const app = express();
-const socketHandler = require('./socketHandler');
+const {handleSocketConnection} = require('./socketHandler');
 const locationRoutes = require('./routes/locationRoute');
 const http = require('http');
 const {Server} = require('socket.io');
+const dotenv = require('dotenv');
+dotenv.config();
+const app = express();
 
 app.use(express.json());
 app.use(cors({
@@ -17,14 +19,14 @@ app.use(cors({
 const server = http.createServer(app);
 const io = new Server(server,{
     cors:{
-        origin: '*',
+        origin: '*', //allow all origins for testing purposes
         methods: ['GET','POST'],
         credentials:true
     }
 });
 
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4000;
 
 app.get('/', (req,res)=>{
     res.send('Server is running');
@@ -33,11 +35,7 @@ app.get('/', (req,res)=>{
 app.use('/api/location', locationRoutes);
 
 io.on('connection',(socket)=>{
-    console.log('User connected.',socket.id);
-    handleJoinRoom(socket,io);
-    socket.on('disconnect',() => {
-        console.log('User disconnected.',socket.id);
-    });
+    handleSocketConnection(socket,io);
 });
 
 

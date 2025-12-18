@@ -1,0 +1,52 @@
+# ===== Environment variables =====
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# ===== Node =====
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ===== Server build / cache =====
+server/node_modules/
+server/dist/
+server/build/
+server/logs/
+server/.env
+
+# ===== Client build / cache =====
+client/node_modules/
+client/dist/
+client/build/
+
+# ===== React / Vite =====
+client/.vite/
+.vite/
+.cache/
+
+# ===== OS files =====
+.DS_Store
+Thumbs.db
+
+# ===== Editor / IDE =====
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ===== Coverage =====
+coverage/
+
+# ===== Temporary files =====
+*.log
+*.tmp
+*.temp
+
+# ===== Optional: dotenv backups =====
+.env.backup
+.env.example.local
