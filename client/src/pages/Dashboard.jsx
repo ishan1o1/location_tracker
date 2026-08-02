@@ -309,7 +309,7 @@ export default function Dashboard() {
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             fontSize: '0.8rem', fontWeight: 700, color: '#111',
           }}>T</div>
-          <span style={{ fontWeight: 700, fontSize: '0.95rem', color: '#fff' }}>TrackNTalk</span>
+          <span style={{ fontWeight: 700, fontSize: '0.95rem', color: '#fff' }}>Spotter</span>
         </div>
 
         {/* Nav */}

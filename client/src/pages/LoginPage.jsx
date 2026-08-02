@@ -201,7 +201,7 @@ export default function LoginPage() {
             color: '#111',
             letterSpacing: '-0.02em',
           }}>
-            Track<br />N<br />Talk
+            Spotter<br />
           </h1>
           <p style={{
             marginTop: '1.5rem',
@@ -244,7 +244,7 @@ export default function LoginPage() {
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             fontSize: '0.9rem',
           }}>T</div>
-          <span style={{ color: '#fff', fontWeight: 700, fontSize: '1rem' }}>TrackNTalk</span>
+          <span style={{ color: '#fff', fontWeight: 700, fontSize: '1rem' }}>Spotter</span>
         </div>
 
         <h2 style={{ color: '#fff', fontWeight: 800, fontSize: '1.7rem', marginBottom: '0.4rem' }}>
