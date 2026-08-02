@@ -1,6 +1,7 @@
 import { apiFetch } from './api';
+import { API_BASE_URL } from '../config/env';
 
-export const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+export const API_URL = API_BASE_URL;
 
 const TOKEN_KEY = 'trackntal_token';
 const USER_KEY = 'trackntal_user';

@@ -1,9 +1,10 @@
 import { io } from 'socket.io-client';
 import authService from './services/authService';
+import { SOCKET_URL, API_BASE_URL } from './config/env';
 
-export const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+export const API_URL = API_BASE_URL;
 
-const socket = io(API_URL, {
+const socket = io(SOCKET_URL, {
     autoConnect: true,
     auth: (cb) => {
         cb({ token: authService.getToken() });
