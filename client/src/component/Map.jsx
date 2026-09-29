@@ -23,7 +23,7 @@ const getDisplayName = (user, fallback = "User") => user?.name || fallback;
 
 const Map = ({
   users = [],
-  mySocketId,
+  myUserId,
   route,
   routeInfo,
   routeLoading,
@@ -76,7 +76,7 @@ const Map = ({
     return null;
   }
 
-  const me = users.find((u) => u.isMe || u.userId === mySocketId);
+  const me = users.find((u) => u.isMe || u.userId === myUserId);
   const myMarkerPosition = me?.lat && me?.lng ? [me.lat, me.lng] : currentLocation;
   const initialCenter = myMarkerPosition || currentLocation || [20.5937, 78.9629];
 
@@ -208,7 +208,7 @@ const Map = ({
 
         {/* Other Members' Markers */}
         {users
-          .filter((user) => !user.isMe && user.userId !== mySocketId)
+          .filter((user) => !user.isMe && user.userId !== myUserId)
           .map(
             (user) =>
               user.lat &&
