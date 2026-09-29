@@ -18,8 +18,8 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-    origin: '*',
-    methods: ['GET', 'POST'],
+    origin: "https://location-tracker-azure-one.vercel.app",
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     credentials: true
 }));
 
@@ -27,7 +27,7 @@ const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
         origin: "https://location-tracker-azure-one.vercel.app",
-        methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+        methods: ["GET", "POST"],
         credentials: true
     }
 });
